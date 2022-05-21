@@ -1,0 +1,18 @@
+.discounts 
+{
+	font-style: italic;
+ 	font-family: "Century Gothic";
+ 	font-weight: lighter;
+}
+
+#header_one
+{
+	text-align: center;
+}
+
+#percent
+{
+	color: red;
+	font-weight: bold;
+	font-style: italic;
+}

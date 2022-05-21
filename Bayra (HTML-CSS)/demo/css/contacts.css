@@ -1,0 +1,19 @@
+#howcont
+{
+	text-align: center;
+	font-style: italic;
+ 	font-family: "Century Gothic";
+ 	font-weight: lighter;
+}
+
+.contacts li
+{
+	padding-left: 60px;
+	list-style-type: none;
+	text-decoration: none;
+	color: black;
+	font-family: "Century Gothic";
+	background-color: white;
+	margin-bottom: 5px;
+
+}

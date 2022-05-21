@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Байра.строй.декор</title>
+  <link rel="stylesheet" media="screen" href="css/background.css"/>
+  <link href="css/nav.css" rel="stylesheet" type="text/css"/>
+  <link href="css/discounts.css" rel="stylesheet" type="text/css"/>
+  <link rel="stylesheet" type="text/css" href="css/gallery.css">
+  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+</head>
+<body>
+<div id="particles-js"></div>
+
+<div id="page-wrapper">
+  <h1 class="h"><img class="center-pic" src="images/head.jpg" height="150" width="600"/></h1>
+  <ul class="nav">
+     <li><a href="discounts.html">Акции</a></li>
+     <li><a href="index.html">Прайс-лист</a></li>
+     <li class="current_page_item"><a href="about.html">Наши работы</a></li>
+     <li><a href="contacts.html">Контакты</a></li>
+     <li><a href="feedback.html">Отзывы</a></li>
+  </ul> 
+
+  <div style="text-align:center">
+    <h2 id="header">Галерея</h2>
+  </div>
+
+  <div class="gallery">
+  <!--
+    Expanded Image
+    <div class="container">
+      <span onclick="this.parentElement.style.display='none'" class="closebtn">×</span>
+      <img id="expandedImg" style="width:70%">
+      <div id="imgtext"></div>
+    </div>
+  -->
+
+  <!-- The four columns -->
+  <div class="row">
+    <div class="column">
+      <img src="images/gallery/01.jpg" alt="01" style="width:100%" onclick="myFunction(this);">
+    </div>
+    <div class="column">
+      <img src="images/gallery/02.jpg" alt="02" style="width:100%" onclick="myFunction(this);">
+    </div>
+    <div class="column">
+      <img src="images/gallery/03.jpg" alt="03" style="width:100%" onclick="myFunction(this);">
+    </div>
+    <div class="column">
+      <img src="images/gallery/04.jpg" alt="04" style="width:100%" onclick="myFunction(this);">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="column">
+      <img src="images/gallery/05.jpg" alt="05" style="width:100%" onclick="myFunction(this);">
+    </div>
+    <div class="column">
+      <img src="images/gallery/06.jpg" alt="06" style="width:100%" onclick="myFunction(this);">
+    </div>
+    <div class="column">
+      <img src="images/gallery/07.jpg" alt="07" style="width:100%" onclick="myFunction(this);">
+    </div>
+    <div class="column">
+      <img src="images/gallery/08.jpg" alt="08" style="width:100%" onclick="myFunction(this);">
+    </div>
+
+    <div class="row">
+    <div class="column">
+      <img src="images/gallery/09.jpg" alt="09" style="width:100%" onclick="myFunction(this);">
+    </div>
+    <div class="column">
+      <img src="images/gallery/10.jpg" alt="10" style="width:100%" onclick="myFunction(this);">
+    </div>
+    <div class="column">
+      <img src="images/gallery/11.jpg" alt="11" style="width:100%" onclick="myFunction(this);">
+    </div>
+    <div class="column">
+      <img src="images/gallery/12.jpg" alt="12" style="width:100%" onclick="myFunction(this);">
+    </div>
+  </div>
+
+</div>
+
+<!-- scripts -->
+<script>
+  function myFunction(imgs) 
+  {
+    var expandImg = document.getElementById("expandedImg");
+    var imgText = document.getElementById("imgtext");
+    expandImg.src = imgs.src;
+    //imgText.innerHTML = imgs.alt;
+    expandImg.parentElement.style.display = "block";
+  }
+</script>
+<script src="../particles.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

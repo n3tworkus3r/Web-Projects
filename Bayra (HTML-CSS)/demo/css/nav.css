@@ -1,0 +1,44 @@
+.nav 
+{
+	list-style-type: none;
+	overflow: hidden;
+	width: 100%;
+	margin: 0;
+    padding: 0;
+    border-bottom: 1px solid #A2A2A2;
+    border-top: 1px solid #A2A2A2;
+    background-color: white;
+    z-index: 3;
+    font-size: 18px;
+}
+
+.nav a 
+{
+	display: inline-block;
+	text-align: center;
+	text-decoration: none;
+
+	font-family: "Century Gothic";
+	
+	padding: 35px;
+	margin-left: 40px;
+	color: black;
+}
+
+
+.nav li
+{
+	float: left;
+}
+
+ul 
+{
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+}
+
+.current_page_item a
+{
+	color: red;
+}

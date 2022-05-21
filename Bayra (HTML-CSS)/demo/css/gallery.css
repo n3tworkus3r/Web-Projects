@@ -1,0 +1,83 @@
+*
+{
+  box-sizing: border-box;
+}
+
+.gallery
+{
+  z-index: 4;
+}
+
+.column 
+{
+  float: left;
+  width: 25%;
+  padding: 10px;
+}
+
+/* Style the images inside the grid */
+.column img 
+{
+  opacity: 1; 
+  cursor: pointer;
+  border: 2px solid gray;  
+}
+
+.column img:hover 
+{
+  opacity: 1;
+}
+
+/* Clear floats after the columns */
+.row:after 
+{
+  content: "";
+  display: table;
+  clear: both;
+}
+
+#header
+{
+  font-weight: lighter;
+  font-family: "Century Gothic";
+}
+
+
+
+/* 
+The expanding image container 
+
+.container 
+{
+  margin: auto;
+  position: absolute;
+  display: none;
+}
+*/
+
+
+/* 
+Expanding image text 
+
+#imgtext 
+{
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  color: white;
+  font-size: 20px;
+}
+*/
+/* 
+Closable button inside the expanded image 
+
+.closebtn 
+{
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  color: white;
+  font-size: 35px;
+  cursor: pointer;
+}
+*/
