@@ -1,0 +1,36 @@
+{
+  "name": "Delivery-NodeJS",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "swagger": "node ./src/swagger/swagger.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon ./src/index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/n3tworkus3r/Delivery-NodeJS"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/n3tworkus3r/Delivery-NodeJS.git/issues"
+  },
+  "homepage": "https://github.com/n3tworkus3r/Delivery-NodeJS#readme",
+  "dependencies": {
+    "amqplib": "^0.8.0",
+    "body-parser": "^1.19.1",
+    "express": "^4.17.2",
+    "jwt-simple": "^0.5.6",
+    "mongoose": "^6.1.6",
+    "nodemon": "^2.0.15",
+    "passport": "^0.5.2",
+    "passport-jwt": "^4.0.0",
+    "pg": "^8.7.1",
+    "sequelize": "^6.13.0",
+    "supertest": "^6.2.1",
+    "swagger-autogen": "^2.18.8",
+    "swagger-ui-express": "^4.3.0"
+  }
+}
