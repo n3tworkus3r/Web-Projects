@@ -1,0 +1,51 @@
+/**************** PROFILE *******************/
+.profile {
+    float: left;
+    overflow: hidden;
+  }
+  
+  .profile .profile_btn {
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 700;
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+    height: 50px;
+  }
+  
+  .navbar a:hover, .profile:hover .profile_btn, .profile_btn:hover {
+    background-color: #4b19ff;
+    padding: 16px 16px;
+  }
+  
+  .profile-content {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    min-width: 115px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .profile-content a {
+    float: none;
+    color: white;
+    padding: 14px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .profile-content a:hover {
+    background-color: #4b19ff;
+
+  }
+  
+  .show {
+    display: grid;
+  }
+  

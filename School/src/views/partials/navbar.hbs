@@ -1,0 +1,36 @@
+
+<div class="topnav navbar" id="myTopnav">
+  <!--<a href="#home" class="active">Профиль</a>-->
+
+  <!-- ПЕРЕХОД НА ГЛАВНУЮ -->
+
+  {{#if main}}
+    <div class="profile" id="profile_btn"><a href="/">ГЛАВНАЯ</a></div>
+  
+    {{> profile}}
+
+    <a href="#search" class="cd-filter-trigger profile">ПОИСК</a> <!--<img src="search.png"  height="25px" width="25px"/>-->
+
+    {{> add}}
+    {{/if}}
+  {{#if t}}
+    <div class="profile" id="profile_btn"><a href="/">ГЛАВНАЯ</a></div>
+    {{> profile}}
+    {{> remove}}
+    {{> update}}
+
+    {{> hide}}
+  {{/if}}
+   {{#if profile}}
+   <div class="profile" id="profile_btn"><a href="/">ГЛАВНАЯ</a></div>
+  
+    {{> profile}}
+     {{/if}}
+     {{#if login}}
+
+     {{/if}}
+
+    <!------------------- БУРГЕР ----------------------->
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()"><i class="fa fa-bars"></i></a>
+    <!-------------------------------------------------->
+</div>

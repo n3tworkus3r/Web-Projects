@@ -1,0 +1,43 @@
+body {
+    margin: 0;
+    background-image: url(/main_background.jpg);
+    background-size: 50%;
+    font-family: 'Open Sans', sans-serif;
+    /*background-repeat: no-repeat;*/
+    overflow: hidden;
+}
+
+button {
+    font-family : inherit;
+}
+
+.validate{
+    border: none;
+}
+
+.bytton{
+    text-align: center;
+  }
+
+  .btnb{
+    color: white;
+    border: none;
+    background-color: #4D4D4D;
+    padding: 15px 20px;
+    font-family: ‘Lucida Sans’, Arial, sans-serif;
+    font-size: 20px;
+  }
+
+  .btnb:hover{
+    background-color: #4b19ff;
+   }
+
+   .updtext1{
+    color: #ffffff;
+    font-family: ‘Lato’, sans-serif;
+    font-size: 14px;
+  }
+  .updtext{
+    color: #ffffff;
+  text-align: center;
+  }

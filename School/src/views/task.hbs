@@ -1,0 +1,87 @@
+  <!---------- TASK ---------
+  <a href="#task" id="search_btn"></a>
+  -->
+
+
+<div class="task_full_container">
+  <label for="task_text" class="label1"><h3>Текст задачи</h3></label>
+  <div class="task_text" id="task_text">
+    <h3>{{task.text}}</h3>
+  </div>
+
+ 
+  <label for="task_img" class="label2"><h3></h3></label>
+  <div class="task_img">
+    {{task.img}}
+  </div>
+
+
+
+ <div class="Cont" id="idVhod">
+  <label for="task_solution" class="label3" ><h3>Ответ: </h3></label>
+  <div id="hide_modal" class="task_solution">
+    <h3 >{{task.solution}}</h3>
+    
+  </div>
+  </div>
+  
+ 
+
+   
+  
+ <div class="Group">
+  <div class="Cont2">
+  <label for="chapter" class="label4"><h3>Раздел:</h3></label>
+  <div id="chapter" name="chapter" class="chapter">
+    <h3>{{task.chapter}}</h3>
+  </div>
+  </div>
+  
+  <div class="Cont3">
+  <label for="year" class="label5"><h3>Класс:</h3></label>
+  <div id="year" name="year" class="year">
+    <h1>{{task.year}}</h1>
+  </div>
+  </div>
+  
+ <div class="Cont4">
+  <label for="complexity" class="label6"><h3>Сложность задачи:</h3></label>
+  <div id="complexity" name="complexity" class="complexity"> 
+    <h1>{{task.complexity}}</h1>
+  </div>
+  </div>
+
+</div>
+
+
+
+<style>
+.task_full_container {
+  color: #fff;
+  background-color: #333;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 90%;
+  margin: auto;
+  margin-top: 10px;
+  padding: 5px;
+  /*text-align: left;*/
+  font-family: Lato;
+}
+
+
+.task_full_container button {
+  border: none;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+.task_full_container button:hover {
+  opacity: 0.7;
+}
+</style>

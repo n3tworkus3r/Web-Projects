@@ -1,0 +1,36 @@
+  <!---------- PROFILE ---------->
+  <div class="profile" id="profile_btn">
+    <!--<button class="profile_btn" onclick="profile_drop()">Профиль </button> -->
+   <button data-path="one" class="profile_btn" onclick="profile_drop()">ПРОФИЛЬ <!-- <i class="fa fa-caret-down"></i>--> </button> 
+    <div data-target="one" class="profile-content" id="profile_dropdown">
+      <a href="/profile">Открыть</a>
+      <a href="/login">Войти</a>
+    </div>
+  </div> 
+
+<script> 
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+  function profile_drop() {
+    document.getElementById("profile_dropdown").classList.toggle("show");
+
+  }
+  
+  // Close the dropdown if the user clicks outside of it
+  document.onclick = function(e) {
+    if (!e.target.matches('.profile_btn')) {
+    var profile_dropdown = document.getElementById("profile_dropdown");
+      if (profile_dropdown.classList.contains('show')) {
+        profile_dropdown.classList.remove('show');
+      }
+    }
+  }
+  
+    
+    
+
+
+
+
+
+</script>
