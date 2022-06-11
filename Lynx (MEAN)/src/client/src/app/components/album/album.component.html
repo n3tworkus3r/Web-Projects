@@ -1,0 +1,34 @@
+<div id="album" *ngIf="album">
+  <header class="album-header">
+    <div class="row">
+      <div class="col-md-4">
+        <div *ngIf="album.images.length > 0">
+          <img class="thumb-album" src="{{album.images[0].url}}">
+        </div>
+      </div>
+      <div class="col-md-8">
+        <h4 *ngIf="album.artists.length > 0">
+          <span *ngFor="let artist of album.artists">
+            {{artist.name}}
+          </span>
+        </h4>
+        <h2>{{album.name}}</h2>
+        <h5>Release Date: {{album.release_date}}</h5>
+        <a class="btn btn-primary" target="_blank" href="{{album.external_urls.spotify}}">View on Spotify</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="album-tracks">
+    <h2 class="my-4">Album Tracks</h2>
+    <div *ngFor="let track of album.tracks.items; let i = index">
+      <div class="card mb-3 p-2">
+        <h5>{{track.track_number}} - {{track.name}}</h5>
+        <a href="{{track.preview_url}}" target="_blank" class="mb-1">Preview Track</a>
+        <a *ngIf="!error" [attr.data-index]="i" class="text-success save-song" (click)="getSongId(i, track.id, track.name, track.artists[0].name, album.external_urls.spotify, album.images[0].url)">Save to Favorites</a>
+        <span *ngIf="saveIndex === i" class="text-info">{{saveSucc}}</span>
+        <span *ngIf="saveIndex === i" class="text-warning">{{saveErr}}</span>
+      </div>
+    </div>
+  </div>
+</div>
