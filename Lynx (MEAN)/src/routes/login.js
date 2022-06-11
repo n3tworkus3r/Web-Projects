@@ -9,8 +9,8 @@ router.get('/login', async (req,res) => {
     
     res.status(200)
     res.render('login', {
-        title: 'Войти',
-        main: true
+        title: 'LogIn',
+        //main: true
     })
 })
 

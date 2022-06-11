@@ -1,36 +1,24 @@
 
-<div class="topnav navbar" id="myTopnav">
-  <!--<a href="#home" class="active">Профиль</a>-->
-
-  <!-- ПЕРЕХОД НА ГЛАВНУЮ -->
-
-  {{#if main}}
-    <div class="profile" id="profile_btn"><a href="/">ГЛАВНАЯ</a></div>
-  
-    {{> profile}}
-
-    <a href="#search" class="cd-filter-trigger profile">ПОИСК</a> <!--<img src="search.png"  height="25px" width="25px"/>-->
-
-    {{> add}}
-    {{/if}}
-  {{#if t}}
-    <div class="profile" id="profile_btn"><a href="/">ГЛАВНАЯ</a></div>
-    {{> profile}}
-    {{> remove}}
-    {{> update}}
-
-    {{> hide}}
-  {{/if}}
-   {{#if profile}}
-   <div class="profile" id="profile_btn"><a href="/">ГЛАВНАЯ</a></div>
-  
-    {{> profile}}
-     {{/if}}
-     {{#if login}}
-
-     {{/if}}
-
-    <!------------------- БУРГЕР ----------------------->
-    <a href="javascript:void(0);" class="icon" onclick="myFunction()"><i class="fa fa-bars"></i></a>
-    <!-------------------------------------------------->
+<div id="mySidebar" class="sidebar">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+  <a href="#">About</a>
+  <a href="#">Services</a>
+  <a href="#">Clients</a>
+  <a href="#">Contact</a>
 </div>
+
+<div class="main_container" id="main">
+  <button class="openbtn" onclick="openNav()">☰</button>  
+</div>
+
+<script>
+function openNav() {
+  document.getElementById("mySidebar").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidebar").style.width = "0";
+  document.getElementById("main").style.marginLeft= "0";
+}
+</script>
