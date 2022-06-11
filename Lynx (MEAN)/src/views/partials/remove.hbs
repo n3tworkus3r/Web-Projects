@@ -1,0 +1,25 @@
+
+<!--button id="remove">Open Modal</button>-->
+
+<a href="#remove" class="profile" id="remove">УДАЛИТЬ</a> <!--<img src="remove.png" height="25px" width="25px"/>-->
+<!-- The Modal -->
+<div id="remove_modal" class="remove_modal">
+
+  <!-- Modal content -->
+  <div class="remove_modal_content">
+    <span class="close">&times;</span>
+    <h1 class="confirm">Вы действительно хотите удалить задачу?</h1>
+    <div>
+      <form action="/remove" class="remove_form" method="POST">
+        <input type="hidden" name="id" value="{{task.id}}">
+        <div class="bytton"> <button href="/{{task.id}}#remove/yes" class="btnb" id="yes">Удалить</button></div>
+        
+
+        <!--<button href="/{{task.id}}#remove" class='remove_btn' id="no_remove" type="">Нет</button>-->
+      </form>
+    </div>
+
+  </div>
+
+</div>
+
