@@ -1,15 +1,16 @@
 
 <div id="mySidebar" class="sidebar">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-  <a href="/login">Login</a>
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"> x </a>
+  <a href="/player">Player</a>
+  
   <a href="/library">Library</a>
-  <a href="#">Clients</a>
-  <a href="#">Contact</a>
+
+  <a href="#">Playlists</a>
+  <a href="/login">LogOut</a>
 </div>
 
-<div class="main_container" id="main">
-  <button class="openbtn" onclick="openNav()">☰</button>  
-</div>
+  <button class="openbtn" id="nav_btn" onclick="openNav()">☰</button>  
+
 
 <script>
 function openNav() {
@@ -20,5 +21,6 @@ function openNav() {
 function closeNav() {
   document.getElementById("mySidebar").style.width = "0";
   document.getElementById("main").style.marginLeft= "0";
+  document.getElementById("nav_btn").style.visibility.hidden;
 }
 </script>

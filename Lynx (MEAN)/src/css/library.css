@@ -37,3 +37,8 @@
   background-color: #f1f1f1;
   margin: 10px;
 }
+
+
+.card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}

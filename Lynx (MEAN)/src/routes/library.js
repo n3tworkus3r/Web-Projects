@@ -10,7 +10,7 @@ router.get('/library', async (req,res) => {
     res.status(200)
     res.render('library', {
         title: 'Library',
-        //main: true,
+        main: true,
         //tasks // Передача объекта tasks в html файл
     })
 })

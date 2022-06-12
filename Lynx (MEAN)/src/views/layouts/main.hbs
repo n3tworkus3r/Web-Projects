@@ -2,8 +2,9 @@
 
     <body>
         
-       
- {{> navbar}}
+    {{#if main }}
+        {{> navbar}}
+    {{/if}}
         <div class="main_container">
             
             {{{ body }}}

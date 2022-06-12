@@ -10,7 +10,7 @@ router.get('/login', async (req,res) => {
     res.status(200)
     res.render('login', {
         title: 'LogIn',
-        //main: true
+        login: true
     })
 })
 

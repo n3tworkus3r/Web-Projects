@@ -8,12 +8,12 @@ router.set('views', './src/views')
 // ВЫВОД ВСЕХ ЗАДАЧ
 ///////////////////////////////////////
 
-router.get('/', async (req,res) => {
+router.get('/player', async (req,res) => {
 
     res.status(200)
     res.render('player', {
         title: 'player',
-        //main: true,
+        main: true,
         //tasks // Передача объекта tasks в html файл
     })
 })

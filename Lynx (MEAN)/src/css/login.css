@@ -1,0 +1,61 @@
+#login_box {
+    position: absolute;
+    align-content: center;
+    text-align: center;
+    width: 40%;
+    height: 50%;
+    min-width: 50%;
+    top: 30%;
+    left: 25%;
+    color: #fff;
+
+    /* DISABLE FOR AWESOME VIEW */
+    /*background-color: #090e14;*/
+
+}
+
+#login_btn{
+    background-color: #202e3d;
+    /*background-color: #202e3d;*/
+    /*background-color: #131b24;*/
+    color: #fff;
+    font-style: normal;    
+}
+
+#login_title {
+    position: relative;
+    /*left: 35%;*/
+    font-family: 'lato',sans-serif;
+    font-weight: 300;
+    font-size: 50px;
+    letter-spacing: 10px; 
+}
+
+#login_title:hover {
+  color: #a31717
+}
+
+#login_btn:hover{
+    background-color: #a31717;
+}
+
+.login_form {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+}
+    
+
+.login_content {
+    font-size: large;
+    font-weight: 700;
+    text-align: center;
+    background: #1e2938cb;
+    color: #333;
+    border: none;
+    padding: 15px;
+    width: 90%;
+    margin: 10px;
+  }

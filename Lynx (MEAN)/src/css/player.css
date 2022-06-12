@@ -1,14 +1,5 @@
 
 
-body{
-    margin: 0%;
-    background: #0f0f11;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-}
 .logo{
     margin: 2px;
     border-radius: 30px;
