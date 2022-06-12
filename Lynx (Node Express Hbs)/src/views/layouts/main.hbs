@@ -1,0 +1,15 @@
+{{> head }}
+
+    <body>
+        
+    {{#if main }}
+        {{> navbar}}
+    {{/if}}
+        <div class="main_container">
+            
+            {{{ body }}}
+        </div>
+        {{> footer}}
+    </body>
+    {{> background}}
+</html>
