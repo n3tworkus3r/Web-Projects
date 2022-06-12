@@ -1,0 +1,60 @@
+-# Pen title
+
+.player
+	.player_inner
+		.player_inner__top
+			.t_left
+				%i.fa.fa-bars
+			.t_mid
+				%h1 CUB3DPlayer
+			.t_right
+				%i.fa.fa-search
+		.player_inner__middle
+			%input.trigger--4{:type => "radio", :name => 'omni'}
+			%input.trigger--3{:type => "radio", :name => 'omni'}
+			%input.trigger--2{:type => "radio", :name => 'omni'}
+			%input.trigger--1{:type => "radio", :name => 'omni'}
+			%input.empty
+			.cube
+				.cube_inner
+					.cube_inner__front
+						.bars
+							-(1..10).each do
+								.bars_bar
+						.details
+							.details_album
+							%h2 Koan Sound - Meanwhile in the future
+							%h3 Funkblaster
+					.cube_inner__left
+						.options
+							%i.fa.fa-headphones
+							%i.fa.fa-redo-alt
+							%i.fa.fa-random
+							%i.fa.fa-fast-forward
+							%i.fa.fa-music
+					.cube_inner__right
+						.volume
+							-(1..14).each do
+								.volume_pip
+							%i.fa.fa-volume-up
+			.r_trim
+			.l_trim
+			.shadow_right
+			.shadow_left
+		.player_inner__bottom
+			.options
+				%i.fa.fa-repeat
+				%i.fa.fa-random
+			.playbar
+				.playbar_inner
+				.playbar_left
+					%span 0:00
+				.playbar_right
+					%span 3:45
+			.controls
+				.controls_left
+					%i.fa.fa-step-backward
+				.controls_middle
+					%i.fa.fa-play-circle
+				.controls_right
+					%i.fa.fa-step-forward
