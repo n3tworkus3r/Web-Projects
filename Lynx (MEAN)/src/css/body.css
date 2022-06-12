@@ -13,39 +13,5 @@ body {
    width: 100%;
    height: 100%;
    z-index: 99;
-   margin-left: 110px;
+   margin-left: 130px;
 }
-/*body {
-
-    
-    display: block;
-    font-family: "Lato", sans-serif;
-    margin: 0%;
-   
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    height: 100%;
-
-    overflow: hidden;
-    background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
-  }
-
-.main_container {
-
-    margin: 0%;
-    display: flex;
-}
-*/
-/*
-  
-body{
-    margin: 0%;
-    background: #0f0f11;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-}
-*/
