@@ -1,4 +1,12 @@
 body {
+    background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
+}
+
+.main_container {
+
+   z-index: 99;
+}
+/*body {
 
     
     display: block;
@@ -9,16 +17,17 @@ body {
     align-items: center;
     overflow: hidden;
     height: 100%;
-    /*z-index: 9999;*/
+
     overflow: hidden;
     background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
   }
 
 .main_container {
-    /*z-index: 1;*/
+
     margin: 0%;
     display: flex;
 }
+*/
 /*
   
 body{
