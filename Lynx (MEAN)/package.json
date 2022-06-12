@@ -1,38 +1,57 @@
 {
-  "name": "lynx",
-  "version": "0.0.0",
+  "name": "mean-template",
+  "version": "2.0.0",
+  "description": "LYNX with MEAN Stack (Mongo, Express, Angular, Node)",
+  "main": "server.js",
   "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "start": "ng build && node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon server.js"
   },
-  "private": true,
+  "repository": {
+    "type": "",
+    "url": ""
+  },
+  "keywords": [
+    "mean",
+    "template",
+    "angular",
+    "node",
+    "express",
+    "simple",
+    "github"
+  ],
+  "author": "",
+  "license": "",
+  "bugs": {
+    "url": ""
+  },
+  "homepage": "",
   "dependencies": {
-    "@angular/animations": "^14.0.0",
-    "@angular/common": "^14.0.0",
-    "@angular/compiler": "^14.0.0",
-    "@angular/core": "^14.0.0",
-    "@angular/forms": "^14.0.0",
-    "@angular/platform-browser": "^14.0.0",
-    "@angular/platform-browser-dynamic": "^14.0.0",
-    "@angular/router": "^14.0.0",
-    "rxjs": "~7.5.0",
-    "tslib": "^2.3.0",
+    "@angular/animations": "~13.1.2",
+    "@angular/common": "~13.1.2",
+    "@angular/compiler": "~13.1.2",
+    "@angular/core": "~13.1.2",
+    "@angular/forms": "~13.1.2",
+    "@angular/platform-browser": "~13.1.2",
+    "@angular/platform-browser-dynamic": "~13.1.2",
+    "@angular/router": "~13.1.2",
+    "express": "^4.17.2",
+    "mongoose": "^6.1.6",
+    "nodemon": "^2.0.16",
+    "path": "^0.12.7",
+    "rxjs": "~6.5.4",
+    "tslib": "^2.0.0",
     "zone.js": "~0.11.4"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "^14.0.1",
-    "@angular/cli": "~14.0.1",
-    "@angular/compiler-cli": "^14.0.0",
-    "@types/jasmine": "~4.0.0",
-    "jasmine-core": "~4.1.0",
-    "karma": "~6.3.0",
-    "karma-chrome-launcher": "~3.1.0",
-    "karma-coverage": "~2.2.0",
-    "karma-jasmine": "~5.0.0",
-    "karma-jasmine-html-reporter": "~1.7.0",
-    "typescript": "~4.7.2"
+    "@angular-devkit/build-angular": "^13.1.3",
+    "@angular/cli": "~13.1.3",
+    "@angular/compiler-cli": "~13.1.2",
+    "@angular/language-service": "~13.1.2",
+    "@types/node": "^12.11.1",
+    "ts-node": "~7.0.0",
+    "tslint": "~6.1.0",
+    "typescript": "~4.5.4"
   }
 }

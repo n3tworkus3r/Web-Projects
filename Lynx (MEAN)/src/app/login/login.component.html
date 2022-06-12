@@ -1,82 +1,10 @@
-
-<div id="login_box">
-    <div class="login_form">
-        <span id="login_title">LYNX<br></span>
-        <input  class="login_content" type="text" name="username" placeholder="Username" required>
-        <input class="login_content" type="password" name="password" placeholder="Password" required>
-        <a href="/library"><input class="login_content" id="login_btn" type="submit" value="Login"></a>
-    </div>   
+<div class="main_container">
+    <div id="login_box">
+        <div class="login_form">
+            <span id="login_title">LYNX<br></span>
+            <input  class="login_content" type="text" name="username" placeholder="Username" required>
+            <input class="login_content" type="password" name="password" placeholder="Password" required>
+            <a href="/library"><input class="login_content" id="login_btn" type="submit" value="Login"></a>
+        </div>   
+    </div>
 </div>
-   
-   
-
-<style>
-    #login_box {
-    position: absolute;
-    align-content: center;
-    text-align: center;
-    width: 40%;
-    height: 50%;
-    min-width: 50%;
-    top: 30%;
-    left: 25%;
-    color: #fff;
-    /* DISABLE FOR AWESOME VIEW */
-    /*background-color: #090e14;*/
-}
-
-.login_content {
-    font-size: large;
-    font-weight: 700;
-    text-align: center;
-    background: #1e2938cb;
-    color: #333;
-    border: none;
-    padding: 20px 0px 15px 0px;
-    width: 90%;
-    margin: 10px;
-}
-
-.login_form {
-    width: 90%;
-    padding: 15px;
-    margin: 5px 0 22px 0;
-    display: inline-block;
-    border: none;
-}
-
-#login_title {
-    position: relative;
-    font-family: 'lato',sans-serif;
-    font-weight: 300;
-    font-size: 50px;
-    letter-spacing: 10px; 
-}
-
-#login_title:hover {
-   color: #a31717;
-    /*
-    color: #fff;
-    text-shadow:
-    0 0 7px rgb(161, 10, 10),
-    0 0 10px rgb(200, 3, 3),
-    0 0 21px rgb(200, 3, 3),
-    0 0 42px rgb(200, 3, 3),
-    0 0 82px rgb(200, 3, 3),
-    0 0 92px rgb(200, 3, 3),
-    0 0 102px #fff,
-    0 0 151px #fff;
-    */
-}
-  
-#login_btn{
-    background-color: #202e3d;
-    color: #fff;
-    font-style: normal;    
-}
-
-#login_btn:hover{
-    background-color: #a31717;
-}
-
-</style>

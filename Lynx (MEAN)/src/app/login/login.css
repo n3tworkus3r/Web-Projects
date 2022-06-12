@@ -8,8 +8,6 @@
     top: 30%;
     left: 25%;
     color: #fff;
-    /* DISABLE FOR AWESOME VIEW */
-    /*background-color: #090e14;*/
 }
 
 .login_content {
@@ -19,13 +17,13 @@
     background: #1e2938cb;
     color: #333;
     border: none;
-    padding: 15px;
+    padding: 20px 0px 15px 0px;
     width: 90%;
     margin: 10px;
 }
 
 .login_form {
-    width: 100%;
+    width: 90%;
     padding: 15px;
     margin: 5px 0 22px 0;
     display: inline-block;
@@ -41,10 +39,8 @@
 }
 
 #login_title:hover {
-  
    color: #a31717;
-      /*
-   
+    /*
     color: #fff;
     text-shadow:
     0 0 7px rgb(161, 10, 10),
@@ -55,7 +51,7 @@
     0 0 92px rgb(200, 3, 3),
     0 0 102px #fff,
     0 0 151px #fff;
-   */
+    */
 }
   
 #login_btn{
@@ -67,6 +63,3 @@
 #login_btn:hover{
     background-color: #a31717;
 }
-
-
-    
