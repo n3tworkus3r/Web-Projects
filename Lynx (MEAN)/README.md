@@ -1,9 +1,9 @@
 # LYNX
--- NodeJS -- ExpressJS --
--- Handlebars --
+
 -- MongoDB (Mongoose) -- Sequelize --
--- SASS --
+-- ExpressJS --
 -- Angular --
+-- NodeJS --
 
 npm run start [for run project]
 
