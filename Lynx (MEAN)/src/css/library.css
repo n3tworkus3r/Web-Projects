@@ -30,15 +30,25 @@
 
 /* Style the counter cards */
 .card {
- 
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  padding: 16px;
+  /*padding: 16px;*/
   text-align: center;
-  background-color: #f1f1f1;
+  background-color: #202e3d;
+  color: #fff;
   margin: 10px;
+  width: 150px;
+  height: 170px;
+  max-width: 200px;
+  max-height: 200px;
 }
 
 
-.card:hover .flip-card-inner {
-  transform: rotateY(180deg);
+.card:hover {
+  background-color: #a31717;
 }
+
+.library_image {
+  padding: 10px;
+  height: 120px;
+  width: 120px;
+} 
