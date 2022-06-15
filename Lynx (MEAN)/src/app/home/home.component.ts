@@ -1,6 +1,6 @@
-import { DataService } from './../services/data.service';
-import { Component, OnInit } from '@angular/core';
-import { Track } from 'ngx-audio-player';
+
+import { Component } from '@angular/core';
+
 
 @Component({
   selector: 'app-home',
