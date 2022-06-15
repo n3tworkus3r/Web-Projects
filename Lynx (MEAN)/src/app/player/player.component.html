@@ -1,0 +1,32 @@
+<nav-component></nav-component>
+
+<div class="main_container">
+    <div class="player">
+        <div class="buttons">
+          <div class="prev-track" onclick="prevTrack()"><i>&#9824;</i></div>
+          <div class="playpause-track" onclick="playpauseTrack()"><i>&#9824;</i></div>
+          <div class="next-track" onclick="nextTrack()"><i>&#9824;</i></div>
+        </div>
+        <div class="slider_container">
+          <div class="current-time">00:00</div>
+          <input type="range" min="1" max="100" value="0" class="seek_slider" onchange="seekTo()">
+          <div class="total-duration">00:00</div>
+        </div>
+        <div class="slider_container">
+          <i class="fa fa-volume-down"></i>
+          <input type="range" min="1" max="100" value="99" class="volume_slider" onchange="setVolume()">
+          <i class="fa fa-volume-up"></i>
+        </div>
+      </div>
+</div>
+
+
+<!--<audio id="audio" src='../../assets/tracks/this_blood.mp3'></audio>
+    <div id="controls">
+        <div class="audio-track"><div class="time"></div></div>
+        <button class="play">Play</button>
+        <button class="pause">Pause</button>
+        <button class="prev">&#60;prev</button>
+        <button class="next">next&#62;</button>
+    </div>
+-->

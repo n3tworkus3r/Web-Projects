@@ -40,11 +40,18 @@
   height: 170px;
   max-width: 200px;
   max-height: 200px;
+  z-index: 99999;
 }
 
+/*
+.track_name:hover {
+
+}
+*/
 
 .card:hover {
   background-color: #a31717;
+  /*color: #a31717;*/
 }
 
 .library_image {
@@ -52,3 +59,32 @@
   height: 120px;
   width: 120px;
 } 
+
+#lynx_title {
+  align-items: center;
+  position: absolute;
+  left: 44%;
+  top: 30px;
+  font-family: 'lato',sans-serif;
+  font-size: 50px;
+  color:  #fff;/*#202e3d;*/
+  letter-spacing: 10px;
+  font-style: italic;
+  font-weight: 800;
+}
+
+#lynx_title :hover {
+  color: #a31717;
+}
+
+#lynx_description {
+  align-items: center;
+  position: absolute;
+  left: 30%;
+  top: 90px;
+  font-family: 'lato',sans-serif;
+  font-size: 25px;
+  color: #fff;
+  letter-spacing: 10px;
+  font-style: italic;
+}

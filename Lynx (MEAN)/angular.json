@@ -26,7 +26,8 @@
               "src/styles.css"
             ],
             "scripts": [
-              "src/assets/scripts/navbar.js"
+              "src/assets/scripts/navbar.js",
+              "src/assets/scripts/audiolist.js"
             ],
             "vendorChunk": true,
             "extractLicenses": false,
