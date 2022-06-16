@@ -16,6 +16,7 @@ import { NewsComponent } from './news/news.component';
 import { NavComponent } from './nav/nav.component';
 import { PlayerComponent } from './player/player.component';
 import { HomeComponent } from './home/home.component';
+import { RegisterComponent } from './register/register.component';
 
 
 
@@ -28,7 +29,8 @@ import { HomeComponent } from './home/home.component';
     NewsComponent,
     NavComponent,
     PlayerComponent,
-    HomeComponent
+    HomeComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
