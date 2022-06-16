@@ -38,4 +38,8 @@ onSubmit() {
 toRegister() {
     this.router.navigate(['/register'])
 }
+
+toLibrary() {
+    this.router.navigate(['/library'])
+}
 }
