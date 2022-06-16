@@ -1,10 +1,29 @@
 <div class="main_container">
-    <div id="login_box">
+    <form id="login_box" 
+    [formGroup]="form"
+    (ngSubmit)="onSubmit()">
         <div class="login_form">
             <span id="login_title">LYNX<br></span>
-            <input  class="login_content" type="text" name="username" placeholder="Username" required>
-            <input class="login_content" type="password" name="password" placeholder="Password" required>
-            <a href="/library"><input class="login_content" id="login_btn" type="submit" value="Login"></a>
-        </div>   
-    </div>
+            <input  formControlName="email"
+                    class="login_content"
+                    type="text" 
+                    name="username"
+                    placeholder="Username">
+            <input  formControlName="password"
+                    class="login_content" 
+                    type="password" 
+                    name="password" 
+                    placeholder="Password">
+            <!--<a href="/library"><input class="login_content" id="login_btn" type="submit" value="Login"></a>
+            -->
+            <button 
+            type="submit"
+            class="login_content" 
+            id="login_btn"
+            
+            >
+            <a href="/library"></a>Login</button>
+
+            </div>   
+    </form>
 </div>
