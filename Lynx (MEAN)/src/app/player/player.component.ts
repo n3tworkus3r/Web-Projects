@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { AudioContext } from 'angular-audio-context';
-import { saveAs } from 'file-saver';
+
+
+
 
 
 @Component({
@@ -9,166 +10,144 @@ import { saveAs } from 'file-saver';
   styleUrls: ['./player.component.css']
 })
 export class PlayerComponent {
-
-  private ctx: any = null;          // The Audio Context Interface 
-  private buffer: any = null;       //  Array Buffer
-  private bufferNode: any = null;   //  Buffer Source Node
-  public playing: boolean = false;  //  Boolean parameter to deal with "Play" & "Stop" buttons
-  private gain: any = null;         //  Effect: Changing volume
-  private panning: any = null;      //  Effect: Changing panning (Left/ Right)
+  
 
 
-  constructor() {
+ now_playing = document.querySelector(".now-playing");
+ track_art = document.querySelector(".track-art");
+ track_name = document.querySelector(".track-name");
+ track_artist = document.querySelector(".track-artist");
+
+ playpause_btn = document.querySelector(".playpause-track");
+ next_btn = document.querySelector(".next-track");
+ prev_btn = document.querySelector(".prev-track");
+
+ seek_slider = document.querySelector(".seek_slider");
+ volume_slider = document.querySelector(".volume_slider");
+ curr_time = document.querySelector(".current-time");
+ total_duration = document.querySelector(".total-duration");
+
+ track_index = 0;
+ isPlaying = false;
+ updateTimer;
+
+// Create new audio element
+ curr_track = document.createElement('audio');
+
+// Define the tracks that have to be played
+ track_list = [
+  {
+    name: "Night Owl",
+    artist: "Broke For Free",
+    image: "https://images.pexels.com/photos/2264753/pexels-photo-2264753.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",
+    path: "./this_blood.mp3"
   }
+];
 
-  //Initiate the Audio Context. Once is enough.
-  initiateAudioContext() {
-    this.ctx = new AudioContext();
-    this.gain = this.ctx.createGain();
-    this.panning = this.ctx.createStereoPanner();
-    console.log("Audio Context Initiated");
-  }
+random_bg_color() {
 
-  //Get the array buffer from the input.
-  choseFile(files: FileList) {
-    let blob = files[0];
-    let fr = new FileReader();
-    fr.onload = (e: any) => {
-      this.ctx.decodeAudioData(e.target.result, (buffer) => {
-        this.buffer = buffer;
-      });
-    }
-    fr.readAsArrayBuffer(blob);
-  }
+  // Get a number between 64 to 256 (for getting lighter colors)
+  let red = Math.floor(Math.random() * 256) + 64;
+  let green = Math.floor(Math.random() * 256) + 64;
+  let blue = Math.floor(Math.random() * 256) + 64;
 
-  //Play the audio file.
-  play() {
-    if (this.playing) return;
-    this.playing = true;
-    //this.ctx.state === 'suspended'? this.ctx.resume() : null;
-    let bufferSourceNode = this.ctx.createBufferSource();
-    bufferSourceNode.buffer = this.buffer;
-    bufferSourceNode.connect(this.gain).connect(this.panning).connect(this.ctx.destination);
-    bufferSourceNode.start();
-    this.bufferNode = bufferSourceNode;
-  }
+  // Construct a color withe the given values
+  let bgColor = "rgb(" + red + "," + green + "," + blue + ")";
 
-  //Stop the audio file.
-  stop() {
-    if (!this.playing) return;
-    this.playing = false;
-    let bn: AudioBufferSourceNode = this.bufferNode;
-    bn.stop();
-  }
+  // Set the background to that color
+  document.body.style.background = bgColor;
+}
 
-  //Add changes to the audio file.
-  change() {
-    let gain: GainNode = this.gain;
-    let panning: StereoPannerNode = this.panning;
-    gain.gain.value = 0.5;
-    panning.pan.value = -1;
-  }
+loadTrack(track_index) {
+  clearInterval(this.updateTimer);
+  //this.resetValues();
+  this.curr_track.src = "./this_blood.mp3";
+  this.curr_track.load();
 
-  //Save the audio with the changes with Offline Audio Context interface
-  async save() {
-    let offlineCtx = new OfflineAudioContext(this.bufferNode.buffer.numberOfChannels, this.bufferNode.buffer.length, this.bufferNode.buffer.sampleRate);
-    let obs = offlineCtx.createBufferSource();
-    obs.buffer = this.buffer;
-    let gain = offlineCtx.createGain();
-    let panning = offlineCtx.createStereoPanner();
-    gain.gain.value = this.gain.gain.value;
-    panning.pan.value = this.panning.pan.value;
-    obs.connect(gain).connect(panning).connect(offlineCtx.destination);
-    obs.start();
-    let newBuff;
-    await offlineCtx.startRendering().then(r => {
-      newBuff = r;
-    });
+  //this.updateTimer = setInterval(this.seekUpdate, 1000);
+  this.curr_track.addEventListener("ended", this.nextTrack);
+  this.random_bg_color();
+}
+/*
+resetValues(self) {
+  this.curr_time.textContent = "00:00";
+  this.total_duration.textContent = "00:00";
+  this.seek_slider.value = 0;
+}
+*/
+// Load the first track in the tracklist
 
-    //From here, the code is taken from the web.
-    //It is for converting the audio buffer to a wav file.
-    const [left, right] = [newBuff.getChannelData(0), newBuff.getChannelData(1)]
 
-    // interleaved
-    const interleaved = new Float32Array(left.length + right.length)
-    for (let src = 0, dst = 0; src < left.length; src++, dst += 2) {
-      interleaved[dst] = left[src]
-      interleaved[dst + 1] = right[src]
-    }
+playpauseTrack() {
+  this.curr_track.load();
+  if (!this.isPlaying) this.playTrack();
+  else this.pauseTrack();
+}
 
-    // get WAV file bytes and audio params of your audio source
-    const wavBytes = this.getWavBytes(interleaved.buffer, {
-      isFloat: true,       // floating point or 16-bit integer
-      numChannels: 2,
-      sampleRate: 48000,
-    })
-    const newFile = new Blob([wavBytes], { type: 'audio/wav' });
-    saveAs(newFile, "new.wav");
-  }
+playTrack() {
+  this.curr_track.play();
+  this.curr_track.pause();
+  this.curr_track.play();
+  this.isPlaying = true;
+ // playpause_btn.innerHTML = '<i class="fa fa-pause-circle fa-5x"></i>';
+}
 
-  getWavBytes(buffer, options) {
-    const type = options.isFloat ? Float32Array : Uint16Array
-    const numFrames = buffer.byteLength / type.BYTES_PER_ELEMENT
+pauseTrack() {
+  this.curr_track.pause();
+  this.isPlaying = false;
+ // playpause_btn.innerHTML = '<i class="fa fa-play-circle fa-5x"></i>';;
+}
 
-    const headerBytes = this.getWavHeader(Object.assign({}, options, { numFrames }))
-    const wavBytes = new Uint8Array(headerBytes.length + buffer.byteLength);
+nextTrack() {
+  if (this.track_index < this.track_list.length - 1)
+  this.track_index += 1;
+  else this.track_index = 0;
+  this.loadTrack(this.track_index);
+  this.playTrack();
+}
 
-    // prepend header, then add pcmBytes
-    wavBytes.set(headerBytes, 0)
-    wavBytes.set(new Uint8Array(buffer), headerBytes.length)
+prevTrack() {
+  if (this.track_index > 0)
+  this.track_index -= 1;
+  else this.track_index = this.track_list.length;
+  this.loadTrack(this.track_index);
+  this.playTrack();
+}
+/*
 
-    return wavBytes
-  }
-  getWavHeader(options) {
-    const numFrames = options.numFrames
-    const numChannels = options.numChannels || 2
-    const sampleRate = options.sampleRate || 44100
-    const bytesPerSample = options.isFloat ? 4 : 2
-    const format = options.isFloat ? 3 : 1
+seekTo() {
+  let seekto = this.curr_track.duration * (this.seek_slider.value / 100);
+  this.curr_track.currentTime = seekto;
+}
 
-    const blockAlign = numChannels * bytesPerSample
-    const byteRate = sampleRate * blockAlign
-    const dataSize = numFrames * blockAlign
+setVolume() {
+  this.curr_track.volume = this.volume_slider.value / 100;
+}
+/*
+seekUpdate() {
+  let seekPosition = 0;
 
-    const buffer = new ArrayBuffer(44)
-    const dv = new DataView(buffer)
+  if (!isNaN(curr_track.duration)) {
+    seekPosition = curr_track.currentTime * (100 / curr_track.duration);
 
-    let p = 0
+    seek_slider.value = seekPosition;
 
-    function writeString(s) {
-      for (let i = 0; i < s.length; i++) {
-        dv.setUint8(p + i, s.charCodeAt(i))
-      }
-      p += s.length
-    }
+    currentMinutes = Math.floor(curr_track.currentTime / 60);
+    currentSeconds = Math.floor(curr_track.currentTime - currentMinutes * 60);
+    durationMinutes = Math.floor(curr_track.duration / 60);
+    durationSeconds = Math.floor(curr_track.duration - durationMinutes * 60);
 
-    function writeUint32(d) {
-      dv.setUint32(p, d, true)
-      p += 4
-    }
+    if (currentSeconds < 10) { currentSeconds = "0" + currentSeconds; }
+    if (durationSeconds < 10) { durationSeconds = "0" + durationSeconds; }
+    if (currentMinutes < 10) { currentMinutes = "0" + currentMinutes; }
+    if (durationMinutes < 10) { durationMinutes = "0" + durationMinutes; }
 
-    function writeUint16(d) {
-      dv.setUint16(p, d, true)
-      p += 2
-    }
-
-    writeString('RIFF')              // ChunkID
-    writeUint32(dataSize + 36)       // ChunkSize
-    writeString('WAVE')              // Format
-    writeString('fmt ')              // Subchunk1ID
-    writeUint32(16)                  // Subchunk1Size
-    writeUint16(format)              // AudioFormat
-    writeUint16(numChannels)         // NumChannels
-    writeUint32(sampleRate)          // SampleRate
-    writeUint32(byteRate)            // ByteRate
-    writeUint16(blockAlign)          // BlockAlign
-    writeUint16(bytesPerSample * 8)  // BitsPerSample
-    writeString('data')              // Subchunk2ID
-    writeUint32(dataSize)            // Subchunk2Size
-
-    return new Uint8Array(buffer)
+    curr_time.textContent = currentMinutes + ":" + currentSeconds;
+    total_duration.textContent = durationMinutes + ":" + durationSeconds;
   }
 }
 
+*/
 
 
+}

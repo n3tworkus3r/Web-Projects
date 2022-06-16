@@ -6,7 +6,6 @@ const User = require('../models/user')
 
 module.exports.login = async function(req,res) {
 
-
     try {
         email = req.body.email,
         password =  req.body.password
@@ -27,46 +26,8 @@ module.exports.login = async function(req,res) {
         //return res.json({token})
     } catch (e) {
         console.log(e)
-        res.status(400).json({message: 'Login error'})
+        return res.status(400).json({message: 'Login error'})
     }
-    /*
-
-    const candidate = User.findOne({email:req.body.email})
-
-
-    if (candidate) {
-      const passwordResult = bcrypt.compareSync(req.body.password, candidate.password)
-    
-      if (passwordResult) {
-       const token = jwt.sign({
-            email: candidate.email,
-
-       }, '', {expiresIn: 60 * 60})
-
-       res.status(200).json({
-        token: token
-       })
-
-      } else {
-        res.status(401).json({
-            message: 'Password not match!'
-        })
-      }
-    
-    
-    } else {
-        res.status(404).json({
-            message: 'User not found!'
-        })
-    }
-
-
-    /*res.status(200).json({
-        login: {
-            email: req.body.email,
-            password: req.body.password
-        }
-    })*/
 }
 
 
@@ -89,7 +50,7 @@ module.exports.register = async function(req,res) {
 
         try{
             await user.save()
-            res.status(201).json(user)
+            return res.status(201).json(user)
         } catch(e){
             console.log('Error user creating!')
         }
