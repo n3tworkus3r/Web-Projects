@@ -6,11 +6,11 @@
 
   {% include 'main/nav.html' %}
 
-  {% for name in track_list %}
+  {% for playlist in playlists %}
     <div class="column">
       <div class="card">
         <img class="library_image" src="{% static 'img/disk.png' %}"/>
-        <p>track name {{name}}</p>
+        <p>playlist {{playlist.name}}</p>
       </div>
     </div>
   {% endfor %}

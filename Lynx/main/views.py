@@ -1,5 +1,5 @@
 from django.shortcuts import render
-
+from .models import Playlist
 
 def home(request):
   return render(request, 'main/home.html')
@@ -12,7 +12,9 @@ def library(request):
   return render(request, 'main/library.html', context={'track_list': track_list})
 
 def playlists(request):
-  return render(request, 'main/playlists.html')
+  playlists = Playlist.objects.all()
+  return render(request, 'main/playlists.html', context={'playlists': playlists})
 
 def player(request):
   return render(request, 'main/player.html')
+
