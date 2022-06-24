@@ -1,0 +1,13 @@
+{% extends 'main/index.html' %}
+
+
+{% block content %}
+
+{% block nav %}{% endblock %}
+  {% for name in track_list %}
+    <div>
+      <p>track name {{name}}</p>
+    </div>
+  {% endfor %}
+{% endblock %}
+
