@@ -1,12 +1,18 @@
 from django.urls import path, include
-from . import views
+from .views import *
 
 urlpatterns = [
-  path('', views.login),
-  path('home', views.home),
-  path('login', views.login),
-  path('player', views.player),
-  path('library', views.library),
-  path('playlists', views.playlists)
+  path('', login),
+  path('home', home),
+  path('login', login),
+  path('player', player),
+  path('library', library),
+
+
+  path('playlists', playlists),
+  path('add_playlist', add_playlist),
+
+
+  path('playlists/<str:id>/', playlist)
 ]
 
