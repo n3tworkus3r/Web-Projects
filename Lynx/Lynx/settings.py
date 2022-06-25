@@ -1,5 +1,6 @@
 from pathlib import Path
 import os
+import pyodbc
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -65,13 +66,14 @@ DATABASES = {
 """
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'OPTIONS': {
-            'service': 'my_service',
-            'passfile': '.my_pgpass',
-        },
-    }
+ 'default': {
+ 'ENGINE': 'django.db.backends.postgresql_psycopg2',
+ 'NAME': 'LynxDB',
+ 'USER': 'blv',
+ 'PASSWORD': 'b3l7a3vm',
+ 'HOST': 'localhost',
+ 'PORT': '5432',
+ }
 }
 '''
 DATABASES = {
