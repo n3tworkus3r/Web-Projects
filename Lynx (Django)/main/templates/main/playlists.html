@@ -1,0 +1,21 @@
+{% extends 'main/index.html' %}
+{% load static %}
+
+
+{% block content %}
+
+  {% include 'main/nav.html' %}
+
+  {% include 'main/add_playlist.html' %}
+
+  {% for playlist in playlists %}
+    <div class="column">
+      <div class="card">
+        <img class="library_image" src="{% static 'img/disk.png' %}"/>
+        <p class="card_text">{{playlist.name}}</p>
+      </div>
+    </div>
+  {% endfor %}
+
+{% endblock %}
+

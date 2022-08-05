@@ -1,0 +1,6 @@
+{% extends 'main/index.html' %}
+{% load static %}
+
+{% block playlist_name %}
+  {{ playlist.name}} - {{ block.super }}
+{% endblock %}

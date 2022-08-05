@@ -1,0 +1,94 @@
+<!-- Trigger/Open The Modal -->
+<button id="add_playlist_btn">+</button>
+
+
+<form action="/playlists" method="POST">
+  {% csrf_token %}
+
+
+<!-- The Modal -->
+<div id="add_playlist_modal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">&times;</span>
+      <h1>Add new playlist</h1>
+    </div>
+    <div class="modal-body">
+
+
+      <!------------------------------------------------>
+      <!---------------- PLAYLIST NAME ----------------->
+      <!------------------------------------------------>
+      <div class="add_content">
+        {{ form.as_p}}
+        <!--<label for="playlist_name">Playlist name</label><br>-->
+        <!--<input id="playlist_name" type="text" placeholder="Playlist name"  class="form_input" required><br>-->
+      </div>
+
+
+      <!------------------------------------------------>
+      <!--------------- PLAYLIST AUTHOR ---------------->
+      <!------------------------------------------------>
+      <div class="add_content">
+        <!--<label for="playlist_author">Author name</label><br>-->
+        <!--<input id="playlist_author" type="text" placeholder="Playlist author" class="form_input" required><br>-->
+      </div>
+      <!------------------------------------------------>
+      <!--------------- PLAYLIST IMAGE ----------------->
+      <!------------------------------------------------>
+      <div class="add_content">
+        <!--<label for="playlist_img">Img path</label><br>-->
+        <!--<input id="playlist_img" type="text" placeholder="Path to img" class="form_input"><br>-->
+      </div>
+
+
+
+      <!------------------------------------------------>
+      <div><button class="submit_btn">Submit</button></div>
+
+
+
+
+
+
+    </div>
+    <div class="modal-footer">
+      <h3> </h3>
+    </div>
+  </div>
+
+</div>
+
+</form>
+
+
+
+<script>
+// Get the modal
+var modal = document.getElementById("add_playlist_modal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("add_playlist_btn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>

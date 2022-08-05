@@ -1,0 +1,63 @@
+body {
+  background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
+  margin: 0%;
+
+  background-position: center;
+  background-size: cover;
+
+  min-height: 100vh;
+  /*display: flex;*/
+  display: block;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  /*overflow: auto;*/
+}
+
+.main_container {
+  padding: 90px;
+  width: 100%;
+  height: 100%;
+  z-index: 99;
+  /* margin-left: 130px; */
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  -ms-overflow-style: none;  /* IE и Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+
+.form_input {
+  font-size: large;
+  font-weight: 700;
+  width: 100%;
+  padding: 15px;
+  height: 50px;
+  border: none;
+  background: rgba(0,0,0,0.3);
+  color: #fff;
+}
+
+.submit_btn {
+  width: 60%;
+  height: 40px;
+  border: none;
+
+  color: #fff;
+  background-color: #202e3d;
+}
+
+.submit_btn:hover {
+  background-color: #a31717;
+}
+
+p.card_text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 5px;
+}
