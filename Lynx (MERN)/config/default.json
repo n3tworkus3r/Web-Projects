@@ -1,3 +1,4 @@
 {
+    "port": "9000",
     "jwt_secret": "B3L7A3VM"
 }

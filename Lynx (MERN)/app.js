@@ -12,7 +12,7 @@ app.use('/api/auth', require('./routes/auth.routes'))
 /////////////////////////////////
 
 ///// CONNECTION TO SERVER //////
-const PORT = process.env.PORT || 4000
+const PORT = config.get('port')
 
 async function start() {
     try {

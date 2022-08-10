@@ -13,3 +13,9 @@ THEME COLOR -- #a31717
 ### INIT PROJECT
 1) cd ./client
 2) npx create-app-react .
+
+
+### REACT ROUTING
+
+1) npm i react-router-dom
+2) npm install react-router-dom --save
