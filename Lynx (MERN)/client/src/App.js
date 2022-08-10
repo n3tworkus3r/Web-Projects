@@ -9,11 +9,11 @@ function App() {
   const routes = use_routes(false)
   return (
     <Router>
-      <Background/>
+      
       <div>
         {routes}
       </div>
-
+      <Background/>
     </Router>
 
   )

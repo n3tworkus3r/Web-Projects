@@ -7,51 +7,32 @@ export const LibraryPage = () => {
       <div className="row">
         <div className="column">
           <div className="card">
-            <img className="library_image" src="./disk.png"/>
-            <p>Name</p>
-            <p>Artist</p>
+            <img className="library_image" src={require('./disk.png')} alt="disk_img"/>
+            <p className="track_name">track name 1</p>
           </div>
         </div>
 
         <div className="column">
           <div className="card">
-            <img className="library_image" src="disk.png"/>
-            <p>Name</p>
-            <p>Artist</p>
+            <img className="library_image" src={require('./disk.png')} alt="disk_img"/>
+            <p className="track_name">track name 2</p>
+          </div>
+        </div>
+        
+        <div className="column">
+          <div className="card">
+            <img className="library_image" src={require('./disk.png')} alt="disk_img"/>
+            <p className="track_name">track name 3</p>
           </div>
         </div>
 
         <div className="column">
           <div className="card">
-            <img className="library_image" src="disk.png"/>
-            <p>Name</p>
-            <p>Artist</p>
+            <img className="library_image" src={require('./disk.png')} alt="disk_img"/>
+            <p className="track_name">track name 4</p>
           </div>
         </div>
         
-        <div className="column">
-          <div className="card">
-            <img className="library_image" src="disk.png"/>
-            <p>Name</p>
-            <p>Artist</p>
-          </div>
-        </div>
-        
-        <div className="column">
-          <div className="card">
-            <img className="library_image" src="disk.png"/>
-            <p>Name</p>
-            <p>Artist</p>
-          </div>
-        </div>
-        
-        <div className="column">
-          <div className="card">
-            <img className="library_image" src="disk.png"/>
-            <p>Name</p>
-            <p>Artist</p>
-          </div>
-        </div>
       </div>
     </div>
   )
