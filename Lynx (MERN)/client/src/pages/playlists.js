@@ -1,7 +1,7 @@
 import React from "react"
 
 
-export const playlists_page = () => {
+export const PlaylistsPage = () => {
   return(
     <div>
       <h1>Playlists page</h1>

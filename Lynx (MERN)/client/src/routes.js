@@ -1,22 +1,23 @@
 import React from 'react'
 import { Routes, Route} from 'react-router-dom'
-import { login_page } from './pages/login'
-import { library_page } from './pages/library'
+import { LoginPage } from './pages/login'
+import { LibraryPage } from './pages/library'
+import { PlaylistsPage } from './pages/playlists'
 
 export const use_routes = isAuthenticated => {
   if (isAuthenticated) {
     return (
       <Routes>
 
-        <Route exact path='/login' element={<login_page/>}/>
+        <Route exact path='/login' element={<LoginPage/>}/>
 
 
         <Route path="library" exact>
-          <library_page/>
+          <LibraryPage/>
         </Route>
 
         <Route path="playlists" exact>
-          <playlists_page/>
+          <PlaylistsPage/>
         </Route>
       </Routes>
 
@@ -25,7 +26,7 @@ export const use_routes = isAuthenticated => {
 
   return (
     <Routes>
-        <Route exact path='/' element={<login_page/>}/>
+        <Route exact path='/' element={<LoginPage/>}/>
     </Routes>
   )
 
