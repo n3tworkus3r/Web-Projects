@@ -1,12 +1,14 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import './login.css'
-import { useHttp } from '../../hooks/http.hook'
+import { use_http } from '../../hooks/http.hook'
 import { use_message } from '../../hooks/message.hook'
+import { auth_context } from '../../context/auth_context'
 
 export const LoginPage = () => { 
 
   const message = use_message()
-  const { loading, request, error, clear_error } = useHttp()
+  const auth = useContext(auth_context) 
+  const { loading, request, error, clear_error } = use_http()
   const [ form, set_form ] = useState({ email: '', password: '' })
 
   const change_handler = event => { 
@@ -31,7 +33,7 @@ export const LoginPage = () => {
   const login_handler = async () => {
     try {
       const data = await request('/api/auth/login', 'POST', {...form})
-      console.log('DATA', data)
+      auth.login(data.token, data.id)
     } catch (error) { }
   }
 

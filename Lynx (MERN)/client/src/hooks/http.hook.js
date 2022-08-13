@@ -1,7 +1,7 @@
 import { useState, useCallback } from 'react'
 
 
-export const useHttp = () => {
+export const use_http = () => {
   const [loading, set_loading] = useState(false)
 
   const [error, set_error] = useState(null)
