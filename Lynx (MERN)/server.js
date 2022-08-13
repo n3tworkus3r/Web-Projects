@@ -2,12 +2,11 @@
 const mongoose = require('mongoose') // пакет взаимодействия с MongoDB
 const express = require('express')
 const config = require('config')
-const body_parser = require('body-parser');
-
 
 //////// SERVER INSTANCES ////////
 const app = express()
 
+app.use(express.json({extended: true}))
 app.use('/api/auth', require('./routes/auth.routes'))
 /////////////////////////////////
 

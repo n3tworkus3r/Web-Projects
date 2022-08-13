@@ -25,9 +25,8 @@ export const use_routes = isAuthenticated => {
 
   return (
     <Routes>
-
-        {/*  <Route exact path='/' element={<LoginPage/>}/> */}
-        <Route exact path='/' element={<LibraryPage/>}/>
+      {/*  <Route exact path='/' element={<LoginPage/>}/> */}
+      <Route exact path='/' element={<LoginPage/>}/>
     </Routes>
   )
 

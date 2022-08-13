@@ -2,9 +2,10 @@
   "name": "server",
   "version": "1.0.0",
   "description": "Lynx (MERN)",
-  "main": "app.js",
+  "main": "server.js",
+  "proxy": "http://localhost:4000",
   "scripts": {
-    "server": "nodemon app.js.js",
+    "server": "nodemon server.js",
     "client": "npm run start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\""
   },
@@ -20,6 +21,7 @@
     "express": "^4.17.3",
     "express-validator": "^6.14.2",
     "jsonwebtoken": "^8.5.1",
+    "materialize-css": "^1.0.0-rc.2",
     "mongoose": "^6.3.2",
     "path": "^0.12.7"
   }

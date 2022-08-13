@@ -58,6 +58,7 @@
     background-color: #202e3d;
     color: #fff;
     font-style: normal;
+    padding: inherit;
 }
 
 #login_btn:hover{

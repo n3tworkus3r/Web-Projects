@@ -1,5 +1,6 @@
-import React from "react";
-import { use_routes } from "./routes";
+import React from 'react';
+import 'materialize-css'
+import { use_routes } from './routes';
 import { Background } from './views/background/background';
 import { BrowserRouter as Router } from 'react-router-dom'
 

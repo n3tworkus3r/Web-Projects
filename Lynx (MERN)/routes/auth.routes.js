@@ -45,7 +45,7 @@ router.post(
     const user = new Users({email, password: hashed_password})
 
     await user.save()
-    res.status(201).json({message : 'Ok!' })
+    res.status(201).json({message : 'Ok!'})
 
   } 
   catch (error) {

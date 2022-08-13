@@ -1,17 +1,17 @@
 const {Schema, model} = require('mongoose');
 
 const users = new Schema({
-  login: {
+  email: {
     type: String,
-    required: true
+    //required: true
   },
   password: {
     type: String,
-    required: true
+    //required: true
   },
-  role: {
-    type: Number
-  }
+  //role: {
+  //  type: Number
+  //}
 })
 
 module.exports = model('Users', users)
