@@ -18,7 +18,7 @@ export const NavbarContent = ({active, set_active}) => {
     <a id="close_nav_btn"  onClick={() => set_active(false)}>&#10006;</a>
     <NavLink to="/player">Player</NavLink>
     <NavLink to="/library">Library</NavLink>
-    <NavLink to="#">Playlists</NavLink>
+    <NavLink to="/playlists">Playlists</NavLink>
     <a to="/" onClick={logout_handler}>LogOut</a>
   </div>
 )

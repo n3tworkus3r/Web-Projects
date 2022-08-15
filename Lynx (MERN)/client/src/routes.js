@@ -4,8 +4,8 @@ import { LoginPage } from './views/login/login'
 import { LibraryPage } from './views/library/library'
 import { PlaylistsPage } from './views/playlists/playlists'
 
-export const use_routes = isAuthenticated => {
-  if (isAuthenticated) {
+export const use_routes = is_authenticated => {
+  if (is_authenticated) {
     return (
       <Routes>
         <Route exact path='/' element={<LibraryPage/>}/>
@@ -17,7 +17,6 @@ export const use_routes = isAuthenticated => {
 
   return (
     <Routes>
-      {/*  <Route exact path='/' element={<LoginPage/>}/> */}
       <Route exact path='/' element={<LoginPage/>}/>
     </Routes>
   )
