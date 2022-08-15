@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
-import 'materialize-css'
 import { use_routes } from './routes';
-import { NavbarBtn } from './components/navbar_button'
+import { NavbarBtn } from './components/navbar/navbar_button'
 import { use_auth } from './hooks/auth.hook';
 import { auth_context } from './context/auth_context';
-import { NavbarContent } from './components/navbar_content'
+import { NavbarContent } from './components/navbar/navbar_content'
 import { BrowserRouter as Router } from 'react-router-dom'
-import { Background } from './views/background/background';
+import { Background } from './components/background/background';
 
 
 

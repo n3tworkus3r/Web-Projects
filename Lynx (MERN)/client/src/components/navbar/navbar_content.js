@@ -1,15 +1,16 @@
-//import './navbar.css'
 import React, { useContext } from 'react'
 import {NavLink, useNavigate} from 'react-router-dom'
-import {auth_context} from '../context/auth_context'
+import {auth_context} from '../../context/auth_context'
 
 export const NavbarContent = ({active, set_active}) => {
   const navigate = useNavigate()
   const auth = useContext(auth_context)
 
   const logout_handler = event => {
-    event.prevenDefault()
+    event.preventDefault()
+    set_active(false)
     auth.logout()
+    navigate('/')
   }
 
   return(
