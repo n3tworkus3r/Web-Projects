@@ -13,3 +13,7 @@ body {
   z-index: 99;
   margin-left: 130px;
 }
+
+#root {
+  width: 100%;
+}

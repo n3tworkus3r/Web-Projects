@@ -8,7 +8,6 @@ import { BrowserRouter as Router } from 'react-router-dom'
 import { Background } from './components/background/background';
 
 
-
 function App() {
 
   const [navbar_active, set_navbar_active] = useState(false)
