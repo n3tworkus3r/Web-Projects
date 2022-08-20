@@ -1,8 +1,8 @@
 import React, { useContext, useEffect, useState } from 'react'
 import './login.css'
-import { use_http } from '../../hooks/http.hook'
-import { use_message } from '../../hooks/message.hook'
-import { auth_context } from '../../context/auth_context'
+import { use_http } from '../../../hooks/http.hook'
+import { use_message } from '../../../hooks/message.hook'
+import { auth_context } from '../../../context/auth_context'
 
 export const LoginPage = () => { 
 

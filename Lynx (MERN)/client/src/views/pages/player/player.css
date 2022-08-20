@@ -1,5 +1,5 @@
 .player {
-  width: 90%;
+  width: 80%;
   height: 90%;
 }
 
@@ -20,17 +20,59 @@ button {
   cursor: pointer;
 }
 
+/*********************
+INPUT RANGE
+*********************/
 
-
-input[type="range"] {
-  height: 5px;
+input[type=range]{
   -webkit-appearance: none;
   width: 100%;
-  margin-bottom: 10px;
-  border-radius: 8px;
-  background: darkred;
-  cursor: pointer;
+  height: 4px;
 }
+
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  border: none;
+  height: 16px;
+  width: 16px;
+  background: #a31717;
+}
+
+/*************************/
+
+.audio_controls {
+  display: flex;
+  justify-content: space-between;
+  width: 40%;
+  margin: 0 auto 15px;
+  margin-top: 20px;
+}
+
+.audio_controls .prev_btn svg,
+.audio_controls .next_btn svg {
+  width: 35px;
+  height: 35px;
+}
+
+.audio_controls .play_btn svg,
+.audio_controls .pause_btn svg {
+  height: 40px;
+  width: 40px;
+}
+
+.prev_btn:hover,
+.next_btn:hover,
+.play_btn:hover,
+.pause_btn:hover   {
+  fill: #a31717;
+}
+
+.audio_controls path {
+  fill: var(--white);
+}
+
+
+/*
 
 .artwork {
   border-radius: 120px;
@@ -56,29 +98,7 @@ input[type="range"] {
   margin-top: 0;
 }
 
-.audio-controls {
-  display: flex;
-  justify-content: space-between;
-  width: 40%;
-  margin: 0 auto 15px;
-  margin-top: 20px;
-}
 
-.audio-controls .prev svg,
-.audio-controls .next svg {
-  width: 35px;
-  height: 35px;
-}
-
-.audio-controls .play svg,
-.audio-controls .pause svg {
-  height: 40px;
-  width: 40px;
-}
-
-.audio-controls path {
-  fill: var(--white);
-}
 
 .color-backdrop {
   background: linear-gradient(45deg, var(--active-color) 20%, transparent 100%)
@@ -103,3 +123,4 @@ input[type="range"] {
     filter: hue-rotate(360deg);
   }
 }
+*/

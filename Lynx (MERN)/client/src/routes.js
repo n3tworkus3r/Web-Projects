@@ -1,9 +1,9 @@
 import React from 'react'
 import { Routes, Route} from 'react-router-dom'
-import { LoginPage } from './views/login/login'
-import { LibraryPage } from './views/library/library'
-import { PlaylistsPage } from './views/playlists/playlists'
-import { PlayerPage } from './views/player/player'
+import { LoginPage } from './views/pages/login/login'
+import { LibraryPage } from './views/pages/library/library'
+import { PlaylistsPage } from './views/pages/playlists/playlists'
+import { PlayerPage } from './views/pages/player/player'
 
 export const use_routes = is_authenticated => {
   if (is_authenticated) {
