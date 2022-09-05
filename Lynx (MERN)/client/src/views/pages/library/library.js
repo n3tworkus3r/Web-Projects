@@ -1,15 +1,43 @@
 import React from "react"
 import "./library.css"
-
+import { use_http } from '../../../hooks/http.hook'
+import { Player } from "../../components/player/player"
+import { useState } from "react"
 export const LibraryPage = () => {
+  const {request} = use_http()
+
+  ////////////////////////////////////////
+  //// ОБРАБОТЧИК ВОСПРОИЗВЕДЕНИЯ ТРЕКА
+  ////////////////////////////////////////
+  const track_id_handler = async () => {
+    try {
+      const data = await request('/library:id', 'GET')
+      
+    } catch (error) { }
+  }
+
+
+
+  ////////////////////////////////////////
+  //// ОТОБРАЖЕНИЕ ТРЕКА
+  ////////////////////////////////////////
+  const [playerActive, set_player_active] = useState(false)
+
   return(
     <div id="main">
+
+
+      <Player active={playerActive} set_active={set_player_active} ></Player>
+
+
       <div className="row">
         <div className="column">
-          <div className="card">
+        {/*<NavLink to="/library:id">*/}
+          <div className="card"  onClick={() => set_player_active(true)}>
             <img className="library_image" src={require('./disk.png')} alt="disk_img"/>
             <p className="track_name">track name 1</p>
           </div>
+        {/*</NavLink>*/}
         </div>
 
         <div className="column">

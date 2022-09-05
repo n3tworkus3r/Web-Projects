@@ -1,0 +1,142 @@
+.player {
+  width: 80%;
+  height: 90%;
+}
+
+.player_container {
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  bottom: 0;
+  width: 80%;
+  height: 15%;
+  background-color: #202e3d;;
+  z-index: 1;
+  transform: scale(0);
+  margin-bottom: 20px;
+}
+
+.player_container.active {
+  transform: scale(1);
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+#close_player_btn {
+  position: absolute;
+  color: #fff;
+  top: 0;
+  right: 5px;
+  font-size: 20px;
+  padding: 5px 5px 5px 5px;
+}
+
+
+/*********************
+INPUT RANGE
+*********************/
+
+input[type=range]{
+  -webkit-appearance: none;
+  width: 100%;
+  height: 4px;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  border: none;
+  height: 16px;
+  width: 16px;
+  background: #a31717;
+}
+
+/*************************/
+
+.audio_controls {
+  display: flex;
+  justify-content: space-between;
+  width: 40%;
+  margin: 0 auto 15px;
+  margin-top: 20px;
+}
+
+.audio_controls .prev_btn svg,
+.audio_controls .next_btn svg {
+  width: 35px;
+  height: 35px;
+}
+
+.audio_controls .play_btn svg,
+.audio_controls .pause_btn svg {
+  height: 40px;
+  width: 40px;
+}
+
+.prev_btn:hover,
+.next_btn:hover,
+.play_btn:hover,
+.pause_btn:hover   {
+  fill: #a31717;
+}
+
+.audio_controls path {
+  fill: var(--white);
+}
+
+
+/*
+
+.artwork {
+  border-radius: 120px;
+  display: block;
+  margin: auto;
+  height: 200px;
+  width: 200px;
+}
+
+.track-info {
+  text-align: center;
+  z-index: 1;
+  position: relative;
+}
+
+.title {
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.artist {
+  font-weight: 300;
+  margin-top: 0;
+}
+
+
+
+.color-backdrop {
+  background: linear-gradient(45deg, var(--active-color) 20%, transparent 100%)
+    no-repeat;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+}
+
+.color-backdrop.playing {
+  animation: colorChange 20s alternate infinite;
+}
+
+@keyframes colorChange {
+  from {
+    filter: hue-rotate(0deg);
+  }
+  to {
+    filter: hue-rotate(360deg);
+  }
+}
+*/
