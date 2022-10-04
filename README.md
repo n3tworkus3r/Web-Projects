@@ -1,2 +1,2 @@
 # Web
-TypeScript, Angular
+TypeScript, Angular, React, Node, Django, Hbs
