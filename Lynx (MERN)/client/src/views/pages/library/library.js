@@ -23,11 +23,17 @@ export const LibraryPage = () => {
   ////////////////////////////////////////
   const [playerActive, set_player_active] = useState(false)
 
+
+  ////////////////////////////////////////
+  //// ОБЪЕКТ С ТРЕКАМИ
+  ////////////////////////////////////////
+
+  const tracks = [['1','http://127.0.0.1:8080/1.mp3'],['2','http://127.0.0.1:8080/2.mp3'],['3','http://127.0.0.1:8080/3.mp3'],['4','http://127.0.0.1:8080/4.mp3']]
   return(
     <div id="main">
 
 
-      <Player active={playerActive} set_active={set_player_active} ></Player>
+      <Player active={playerActive} set_active={set_player_active} tracks={tracks} ></Player>
 
 
       <div className="row">

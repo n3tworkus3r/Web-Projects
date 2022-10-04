@@ -1,0 +1,51 @@
+/* Float four columns side by side */
+.column {
+  float: left;
+  width: 200px;
+  padding: 0 10px;
+  margin: 5px;
+}
+
+/* Remove extra left and right margins, due to padding */
+.row {margin: 0 -5px;}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+@media screen and (max-width: 600px) {
+  .column {
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+.playlist_card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  /*padding: 16px;*/
+  text-align: center;
+  background-color: #202e3d;
+  color: #fff;
+  margin: 5px;
+  width: 206px;
+  height: 206px;
+  /*max-width: 200px;
+  max-height: 200px;*/
+}
+
+.playlist_card:hover {
+  background-color: #a31717;
+}
+
+.playlist_image {
+  padding: 1px;
+  padding-top: 5px;
+  height: 196px;
+  width: 196px;
+}
+
+.track_name {
+  margin: 0;
+}

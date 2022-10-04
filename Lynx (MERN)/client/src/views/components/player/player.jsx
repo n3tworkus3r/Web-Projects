@@ -4,7 +4,7 @@ import AudioControls from "./player_controls"
 import "./player.css"
 
 
-export const Player = ({active, set_active}/*{ tracks }*/) => {
+export const Player = ({active, set_active, tracks }) => {
   // State
   const [trackIndex, setTrackIndex] = useState(0)
   const [trackProgress, setTrackProgress] = useState(0)
@@ -13,8 +13,10 @@ export const Player = ({active, set_active}/*{ tracks }*/) => {
   // Destructure for conciseness
  // const { title, artist, color, image, audioSrc } = tracks[trackIndex]
 
+  const { title, audioSrc } = tracks[trackIndex]
+
   // Refs
-  const audioRef = useRef(new Audio('http://127.0.0.1:8080/3.mp3'))
+  const audioRef = useRef(new Audio())
   const intervalRef = useRef()
   const isReady = useRef(false)
 
@@ -55,19 +57,19 @@ export const Player = ({active, set_active}/*{ tracks }*/) => {
 
   const toPrevTrack = () => {
     if (trackIndex - 1 < 0) {
-      //setTrackIndex(tracks.length - 1)
+      setTrackIndex(tracks.length - 1)
     } else {
-      //setTrackIndex(trackIndex - 1)
+      setTrackIndex(trackIndex - 1)
     }
   };
 
   const toNextTrack = () => {
-    /*if (trackIndex < tracks.length - 1) {
+    if (trackIndex < tracks.length - 1) {
+      console.log(tracks.length)
       setTrackIndex(trackIndex + 1)
     } else {
       setTrackIndex(0)
     }
-    */
   };
 
   useEffect(() => {
@@ -82,7 +84,7 @@ export const Player = ({active, set_active}/*{ tracks }*/) => {
   useEffect(() => {
     audioRef.current.pause();
 
-    audioRef.current = new Audio('http://127.0.0.1:8080/3.mp3')
+    audioRef.current = new Audio(tracks[trackIndex][1])
     setTrackProgress(audioRef.current.currentTime)
 
     if (isReady.current) {
